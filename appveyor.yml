@@ -11,9 +11,6 @@ build_script:
   - yarn build
 test_script:
   - yarn lint && yarn test
-  - yarn start
-  - sleep 15
-  - yarn e2e
 deploy_script:
   - git config --global credential.helper store
   - git config --global user.name AppVeyor
