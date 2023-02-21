@@ -1,7 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import puppeteer from 'puppeteer';
 
-jest.setTimeout(25000);
+jest.setTimeout(30000);
+const url = 'https://yrchek.github.io/Credit_Card_Validator/';
 
 describe('форма ввода номера карт', () => {
   let browser;
@@ -17,7 +18,7 @@ describe('форма ввода номера карт', () => {
   });
 
   test('Отображение на странице блоков с картинками', async () => {
-    await page.goto('http://localhost:9000');
+    await page.goto(url);
 
     await page.waitForSelector('.box');
     const box = await page.$$('.box');
@@ -26,7 +27,7 @@ describe('форма ввода номера карт', () => {
   });
 
   test('Проверка на ввод валидного номера', async () => {
-    await page.goto('http://localhost:9000');
+    await page.goto(url);
 
     await page.waitForSelector('.box');
     const forms = await page.$('.form');
@@ -47,7 +48,7 @@ describe('форма ввода номера карт', () => {
   });
 
   test('Проверка на ввод невалидного номера', async () => {
-    await page.goto('http://localhost:9000');
+    await page.goto(url);
 
     await page.waitForSelector('.box');
     const forms = await page.$('.form');
