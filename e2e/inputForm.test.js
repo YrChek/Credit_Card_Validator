@@ -2,7 +2,7 @@
 import puppeteer from 'puppeteer';
 
 jest.setTimeout(30000);
-const url = 'https://yrchek.github.io/Credit_Card_Validator/';
+const url = 'http://localhost:9000';
 
 describe('форма ввода номера карт', () => {
   let browser;
