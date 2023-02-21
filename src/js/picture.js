@@ -28,10 +28,8 @@ export default class Picture {
 
   static imageDisplay(idElement) {
     const idEl = document.getElementById(idElement);
-    if (idEl) {
-      idEl.classList.add('image');
-      idEl.classList.remove('image-hidden');
-    }
+    idEl.classList.add('image');
+    idEl.classList.remove('image-hidden');
   }
 
   deleteAllImages() {
