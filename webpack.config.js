@@ -7,7 +7,7 @@ const fs = require("fs");
 module.exports = {
   mode: 'development',
   devServer: {
-    port: 8080,
+    port: 9000,
     open: true
   },
   module: {
