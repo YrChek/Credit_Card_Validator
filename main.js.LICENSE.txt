@@ -1,0 +1,20 @@
+/*!
+ * Сведения об использованных изображениях.
+ *
+ * Исходные изображения картинок:
+ * discover.png,
+ * diners.png,
+ * americanExpress.png,
+ * mastercard.png,
+ * visa.png,
+ * скачаны с сайта www.freeimages.com/
+ *
+ * Исходные изображения картинок:
+ * jsb.png,
+ * maestro.png
+ * скачаны с сайта www.pngegg.com/
+ *
+ * Исходное изображение картинки mir.png скачано с сайта www.ph4.org/
+ *
+ * Редактирование картинок произведено на сайте online-fotoshop.ru/
+ */
