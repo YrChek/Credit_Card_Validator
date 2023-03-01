@@ -11,7 +11,7 @@ describe('форма ввода номера карт', () => {
   let server;
 
   beforeAll(async () => {
-    server = fork('./e2e/e2e.server.js');
+    server = fork(`${__dirname}/e2e.server.js`);
     await new Promise((resolve, reject) => {
       server.on('error', reject);
       server.on('message', (message) => {
