@@ -1,18 +1,30 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import puppeteer from 'puppeteer';
+import { fork } from 'child_process';
 
 jest.setTimeout(30000);
-const url = 'http://localhost:9000';
+const url = 'http://localhost:8080';
 
 describe('форма ввода номера карт', () => {
   let browser;
   let page;
+  let server;
 
   beforeAll(async () => {
+    server = fork('./e2e/e2e.server.js');
+    await new Promise((resolve, reject) => {
+      server.on('error', reject);
+      server.on('message', (message) => {
+        if (message === 'ok') {
+          resolve();
+        }
+      });
+    });
+
     browser = await puppeteer.launch({
-      headless: true,
-      slowMo: 100,
-      devtools: false,
+      // headless: false,
+      // slowMo: 100,
+      // devtools: true,
     });
     page = await browser.newPage();
   });
@@ -67,5 +79,6 @@ describe('форма ввода номера карт', () => {
 
   afterAll(async () => {
     await browser.close();
+    server.kill();
   });
 });
